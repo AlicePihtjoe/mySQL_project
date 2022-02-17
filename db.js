@@ -9,10 +9,9 @@ var con = mysql.createConnection({
 
 con.connect(function(err) {
     if (err) throw err;
-    console.log("Connected!");
-        var sql = "SELECT customers.name AS customer, products.name AS product FROM customers LEFT JOIN products ON customers.name = products.name";
+        var sql = "DROP TABLE products";
         con.query(sql, function (err, result) {
         if (err) throw err;
-    console.log(result);
+    console.log("Table deleted!");
     });
 });
